@@ -1,0 +1,36 @@
+<h2>Invoice Details</h2>
+
+<hr/>
+<div *ngIf="invoice">
+    <div>
+        <label><b>Invoice Number: </b></label> {{invoice.invoiceNumber}}
+    </div>
+    <div>
+        <label><b>Purchase Order Number: </b></label> {{invoice.poNumber}}
+    </div>
+    <div>
+        <label><b>Issue Date: </b></label> {{invoice.issueDate}}
+    </div>
+    <div>
+        <label><b>Due Date: </b></label> {{invoice.dueDate}}
+    </div>
+    <div>
+        <label><b>Payer Org ID: </b></label> {{invoice.payerOrgId}}
+    </div>
+    <div>
+        <label><b>Biller Org ID: </b></label> {{invoice.billerOrgId}}
+    </div>
+    <div>
+        <label><b>Invoice Status: </b></label> {{invoice.status}}
+    </div>
+    <div>
+        <label><b>Invoice Currency: </b></label> {{invoice.currency}}
+    </div>
+    <div>
+        <label><b>Invoice Amount </b></label> {{invoice.amount}}
+    </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Invoice List</button> <br>

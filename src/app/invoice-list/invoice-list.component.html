@@ -1,0 +1,48 @@
+<div class="panel panel-primary" style="width:1000px;">
+    <div class="panel-heading">
+        <h2>Invoice List</h2>
+    </div>
+    <div class="panel-body">
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th>Invoice Number</th>
+                    <th>PO Number</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                    <th>Payer Org</th>
+                    <th>Biller Org</th>
+                    <th>Status</th>
+                    <th>Currency</th>
+                    <th>Amount</th>
+                    <th> </th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let invoice of invoices | async">
+                    <td>{{invoice.invoiceNumber}}</td>
+                    <td>{{invoice.poNumber}}</td>
+                    <td>{{invoice.issueDate}}</td>
+                    <td>{{invoice.dueDate}}</td>
+                    <td>{{invoice.payerOrgId}}</td>
+                    <td>{{invoice.billerOrgId}}</td>
+                    <td>{{invoice.status}}</td>
+                    <td>{{invoice.currency}}</td>
+                    <td>{{invoice.amount}}</td>
+                    <td>
+                        <!-- <button (click)="updateInvoice(invoice.id)" class="btn btn-info" style="margin-left: 10px;">Update</button> -->
+                        <button (click)="updateInvoice(invoice.id)" class="btn btn-info" style="margin-left: 10px;">Update</button>
+                    </td>
+                    <td>
+                        <button (click)="deleteInvoice(invoice.id)" class="btn btn-danger">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner> 

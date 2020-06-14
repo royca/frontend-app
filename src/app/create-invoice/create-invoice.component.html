@@ -1,0 +1,51 @@
+<h3> Create Invoice</h3>        
+<div [hidden]="submitted" style="width:600px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Invoice Number</label>
+            <input type="text" class="form-control" id="invoiceNumber" required [(ngModel)]="invoice.invoiceNumber" name="invoiceNumber">
+        </div>
+        <div class="form-group">
+            <label for="name">Purchase Order Number</label>
+            <input type="text" class="form-control" id="poNumber" required [(ngModel)]="invoice.poNumber" name="poNumber">
+        </div>
+        <div class="form-group">
+            <label for="name">Issue Date</label>
+            <input type="text" class="form-control" id="issueDate" required [(ngModel)]="invoice.issueDate" name="issueDate">
+        </div>
+        <div class="form-group">
+            <label for="name">Due Date</label>
+            <input type="text" class="form-control" id="dueDate" required [(ngModel)]="invoice.dueDate" name="dueDate">
+        </div>
+        <div class="form-group">
+            <label for="name">Payer Org ID</label>
+            <input type="text" class="form-control" id="payerOrgId" required [(ngModel)]="invoice.payerOrgId" name="payerOrgId">
+        </div>
+        <div class="form-group">
+            <label for="name">Biller Org ID</label>
+            <input type="text" class="form-control" id="billerOrgId" required [(ngModel)]="invoice.billerOrgId" name="billerOrgId">
+        </div>
+        <div class="form-group">
+            <label for="name">Invoice Status</label>
+            <input type="text" class="form-control" id="status" required [(ngModel)]="invoice.status" name="status">
+        </div>
+        <div class="form-group">
+            <label for="name">Invoice Currency</label>
+            <input type="text" class="form-control" id="currency" required [(ngModel)]="invoice.currency" name="currency">
+        </div>
+        <div class="form-group">
+            <label for="name">Invoice Amount</label>
+            <input type="text" class="form-control" id="amount" required [(ngModel)]="invoice.amount" name="amount">
+        </div>
+
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <h4>Invoice submitted successfully!</h4>
+</div>
+
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner> 
